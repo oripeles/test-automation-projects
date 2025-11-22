@@ -10,7 +10,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: web-ui-automation
+        working-directory: selenium-ui-automation
 
     steps:
       - name: Checkout repository
@@ -34,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: web-ui-automation/allure-results
+          path: selenium-ui-automation/allure-results

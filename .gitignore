@@ -1,7 +1,18 @@
 # Source - https://stackoverflow.com/a
 # Posted by seanrose, modified by community. See post 'Timeline' for change history
 # Retrieved 2025-11-17, License - CC BY-SA 3.0
+.idea/
 
+# Ignore Python virtual environments
+.venv/
+
+selenium-ui-automation/.venv/
+playwright-ui-api-automation/.venv/
+playwright-ui-api-automation/playwright-report/
+playwright-ui-api-automation/test-results/
+
+# macOS files
+.DS_Store
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
