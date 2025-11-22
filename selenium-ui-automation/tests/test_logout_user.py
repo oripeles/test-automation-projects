@@ -11,7 +11,7 @@ class TestLogoutUser(BaseTest):
     @pytest.mark.order(3)
     def test_logout_user(self, driver):
         data = load_json("user_data")
-        password = "StrongPass!23"
+        password = os.getenv("USER_PASSWORD")
         email = data["existing_user"]["email"]
 
         home = HomePage(driver)
