@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from pages.home_page import HomePage
@@ -9,7 +11,7 @@ class TestLogoutUser(BaseTest):
     @pytest.mark.order(3)
     def test_logout_user(self, driver):
         data = load_json("user_data")
-        password = data["existing_user"]["password"]
+        password = "StrongPass!23"
         email = data["existing_user"]["email"]
 
         home = HomePage(driver)

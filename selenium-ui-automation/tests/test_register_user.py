@@ -1,3 +1,5 @@
+import os
+
 from pages.home_page import HomePage
 from tests.base_test import BaseTest
 from utilities.email_generator import generate_unique_email
@@ -9,7 +11,7 @@ class TestRegisterUser(BaseTest):
     def test_register_user(self, driver):
         email = generate_unique_email()
         data = load_json("user_data")
-        password = data["existing_user"]["password"]
+        password = os.getenv("USER_PASSWORD")
         name = data["existing_user"]["name"]
         gender = "Mr"
         date_data = {

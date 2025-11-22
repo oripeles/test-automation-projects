@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from pages.home_page import HomePage
@@ -9,7 +11,7 @@ class TestLoginValidUser(BaseTest):
     @pytest.mark.order(2)
     def test_login_valid_user(self, driver):
         data = load_json("user_data")
-        password = data["existing_user"]["password"]
+        password = os.getenv("USER_PASSWORD")
         email = data["existing_user"]["email"]
 
         home = HomePage(driver)
