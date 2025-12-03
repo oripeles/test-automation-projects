@@ -93,19 +93,18 @@ allure serve allure-results
 
 ⚙️ CI/CD – GitHub Actions
 
-This project includes a complete CI setup with two jobs:
+This project includes a GitHub Actions pipeline that runs the Selenium UI tests **inside Docker** on every push to the `main` branch.
 
-Job 1 – Regular UI tests (Selenium on ubuntu-latest)
+The workflow:
 
-Installs Python
+- Checks out the repository  
+- Builds a Docker image from the `selenium-ui-automation` Dockerfile  
+- Runs the tests inside a headless Chrome container  
+- Maps the `allure-results` directory from the container back to the GitHub runner  
+- Uploads the Allure results as a workflow artifact (`allure-results-docker`)
 
-Installs project dependencies
-
-Runs pytest --alluredir=allure-results
-
-Uploads Allure results as workflow artifacts
-
-Job 2 – Docker-based UI tests
+Workflow file:
+.github/workflows/tests.yml
 
 Builds the Docker image defined in Dockerfile
 
