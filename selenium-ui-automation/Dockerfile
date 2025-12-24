@@ -27,4 +27,4 @@ RUN python -m pip install --upgrade pip \
 
 COPY . .
 
-CMD ["pytest", "--alluredir=allure-results"]
+CMD ["pytest", "-n", "4", "--alluredir=allure-results"]
