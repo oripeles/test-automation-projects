@@ -6,7 +6,7 @@ from pages.contact_us_form_page import ContactUsFormPage
 from pages.login_page import LoginPage
 from pages.product_detail_page import  ViewProductPage
 from pages.products_page import ProductsPage
-from pages.test_cases_page import TestCasesPage
+from pages.cases_page import CasesPage
 
 class HomePage(BasePage):
     ACTIVE_TAB = (By.XPATH, "//*[@style='color: orange;']")
@@ -66,7 +66,7 @@ class HomePage(BasePage):
 
     def click_test_cases_tab(self):
         self.click(self.TEST_CASES_TAB)
-        return TestCasesPage(self.driver)
+        return CasesPage(self.driver)
 
     def click_product_tab(self):
         self.click(self.PRODUCTS_TAB)

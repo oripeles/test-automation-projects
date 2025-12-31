@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-class TestCasesPage(BasePage):
+class CasesPage(BasePage):
     CASES_TITLE = (By.CLASS_NAME, "title")
 
     def is_case_test_title_visible(self) -> bool:
