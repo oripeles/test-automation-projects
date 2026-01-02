@@ -1,4 +1,3 @@
-import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -7,6 +6,7 @@ from pages.home_page import HomePage
 from utilities.json_loader import load_json
 from utilities.config import BASE_URL, HEADLESS, IMPLICIT_WAIT
 
+pytest_plugins = ("utilities.allure_hooks",)
 @pytest.fixture(scope="function")
 def driver():
     options = webdriver.ChromeOptions()
@@ -37,32 +37,6 @@ def user_data():
 def existing_user(user_data):
     return user_data["existing_user"]
 
-@pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_makereport(item, call):
-    outcome = yield
-    report = outcome.get_result()
-
-    if report.when == "call" and report.failed:
-        driver = item.funcargs.get("driver")
-        if driver:
-            allure.attach(
-
-                driver.get_screenshot_as_png(),
-                name="Failure Screenshot",
-                attachment_type=allure.attachment_type.PNG
-            )
-
-            allure.attach(
-                driver.current_url,
-                name="Current URL",
-                attachment_type=allure.attachment_type.TEXT
-            )
-
-            allure.attach(
-                driver.page_source,
-                name="Page Source",
-                attachment_type=allure.attachment_type.HTML
-            )
 
 
 
