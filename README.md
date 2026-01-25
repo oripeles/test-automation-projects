@@ -1,4 +1,4 @@
-# Selenium UI Automation – Demo E-Commerce Project
+# Selenium UI Automation Framework – Demo E-Commerce Project
 
 A UI test automation framework built with **Python**, **Selenium**, and **Pytest**, targeting a demo e-commerce website.
 
@@ -88,7 +88,7 @@ selenium-ui-automation/
 ├── conftest.py
 ├── requirements.txt
 ├── Dockerfile
-└── README.md
+├── pytest.ini
 
 ---
 
