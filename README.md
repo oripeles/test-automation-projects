@@ -79,6 +79,7 @@ Project convention:
 
 ## 📁 Project Structure
 
+```text
 selenium-ui-automation/
 ├── pages/
 ├── tests/
@@ -88,7 +89,7 @@ selenium-ui-automation/
 ├── conftest.py
 ├── requirements.txt
 ├── Dockerfile
-├── pytest.ini
+└── pytest.ini
 
 ---
 
@@ -176,14 +177,18 @@ Repository Settings → Pages → Source must be set to **GitHub Actions**.
 
 ## 🧩 Fixtures Overview (conftest.py)
 
-- home  
-  Opens BASE_URL, verifies Home page visibility, returns HomePage.
+- **driver** (function scope)  
+  Creates a Chrome WebDriver instance (headless optional), applies implicit wait, and quits after the test.
 
-- user_data (session scope)  
-  Loads test data once from JSON.
+- **home**  
+  Navigates to `BASE_URL`, verifies the Home page is visible, and returns `HomePage`.
 
-- existing_user  
-  Provides stable existing user data for login and related flows.
+- **user_data** (session scope)  
+  Loads test data once per test session from JSON.
+
+- **existing_user**  
+  Returns stable credentials from `user_data["existing_user"]` for login-related flows.
+
 
 ---
 
