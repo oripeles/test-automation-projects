@@ -79,7 +79,6 @@ Project convention:
 
 ## 📁 Project Structure
 
-```text
 selenium-ui-automation/
 ├── pages/
 ├── tests/
@@ -89,7 +88,7 @@ selenium-ui-automation/
 ├── conftest.py
 ├── requirements.txt
 ├── Dockerfile
-└── pytest.ini
+├── pytest.ini
 
 ---
 
