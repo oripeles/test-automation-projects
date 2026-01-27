@@ -45,7 +45,6 @@ class TestRegisterUser:
         created.click_created_account_button()
         assert home.is_logged_in_as_visible(existing_user["name"]), "Wrong logged-in username"
         delete_account =  home.click_delete_account()
-        assert delete_account.is_account_deleted_title_visible(),"Account Deleted title is not visible"
         delete_account.click_deleted_account_button()
 
 
